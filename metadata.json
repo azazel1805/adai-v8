@@ -1,0 +1,9 @@
+{
+  "name": "ADAI",
+  "description": "An all-in-one AI-powered platform for English learners, featuring an AI tutor, essay helper, listening and speaking practice, a podcast creator, and a visual dictionary.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

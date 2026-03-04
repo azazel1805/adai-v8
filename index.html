@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-g" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --background: 248 250 252; /* slate-50 */
+        --foreground: 15 23 42;
+        --card: 255 255 255;
+        --card-foreground: 15 23 42;
+        --primary: 59 130 246; /* blue-500 */
+        --primary-foreground: 255 255 255;
+        --secondary: 241 245 249; /* slate-100 */
+        --secondary-foreground: 15 23 42;
+        --muted: 241 245 249; /* slate-100 */
+        --muted-foreground: 100 116 139; /* slate-500 */
+        --accent: 241 245 249;
+        --accent-foreground: 15 23 42;
+        --border: 226 232 240; /* slate-200 */
+        --input: 226 232 240;
+        --ring: 59 130 246;
+        --radius: 0.75rem;
+
+        /* Custom Colors */
+        --sky: 14 165 233;
+        --blue: 59 130 246;
+        --violet: 139 92 246;
+        --indigo: 99 102 241;
+        --green: 34 197 94;
+        --amber: 245 158 11;
+        --rose: 244 63 94;
+        --yellow: 234 179 8;
+        --purple: 168 85 247;
+      }
+
+      html.dark {
+        --background: 15 23 42; /* slate-900 */
+        --foreground: 248 250 252; /* slate-50 */
+        --card: 30 41 59; /* slate-800 */
+        --card-foreground: 248 250 252;
+        --primary: 96 165 250; /* blue-400 */
+        --primary-foreground: 15 23 42;
+        --secondary: 51 65 85; /* slate-700 */
+        --secondary-foreground: 248 250 252;
+        --muted: 51 65 85;
+        --muted-foreground: 148 163 184; /* slate-400 */
+        --accent: 51 65 85;
+        --accent-foreground: 248 250 252;
+        --border: 51 65 85; /* slate-700 */
+        --input: 51 65 85;
+        --ring: 96 165 250;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: rgb(var(--background));
+        background-image: radial-gradient(circle at 10% 20%, rgba(var(--primary), 0.1), transparent 50%),
+                          radial-gradient(circle at 80% 90%, rgba(var(--violet), 0.1), transparent 50%);
+        background-attachment: fixed;
+        color: rgb(var(--foreground));
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgb(var(--muted));
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #94a3b8; /* slate-400 */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b; /* slate-500 */
+      }
+      html.dark ::-webkit-scrollbar-track {
+        background: #1e293b; /* slate-800 */
+      }
+      html.dark ::-webkit-scrollbar-thumb {
+        background: #475569; /* slate-600 */
+      }
+      html.dark ::-webkit-scrollbar-thumb:hover {
+        background: #334155; /* slate-700 */
+      }
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fade-in-up 0.5s ease-out forwards;
+      }
+      @keyframes glow {
+        0%, 100% { box-shadow: 0 0 5px rgba(var(--primary), 0.1), 0 0 10px rgba(var(--primary), 0.05); }
+        50% { box-shadow: 0 0 20px rgba(var(--primary), 0.2), 0 0 30px rgba(var(--primary), 0.1); }
+      }
+      @keyframes pulse-dot {
+        0%, 100% { transform: scale(0.95); opacity: 0.7; }
+        50% { transform: scale(1.05); opacity: 1; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
